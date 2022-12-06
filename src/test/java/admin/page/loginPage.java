@@ -27,7 +27,4 @@ public class loginPage extends pageLocator {
     public String successLogin(){
         return successLogin.getText();
     }
-    public static void clickOkLogin(){
-        clickOkLogin.click();
-    }
 }
