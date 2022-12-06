@@ -9,7 +9,7 @@ public class driverSetup {
     public static WebDriver webDriver;
     @Before
     public void openBrowser(){
-        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
         webDriver = new ChromeDriver();
         String URL = "https://bengcall.vercel.app/";
         webDriver.get(URL);
