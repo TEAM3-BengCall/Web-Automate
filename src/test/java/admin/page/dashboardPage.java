@@ -13,9 +13,6 @@ public class dashboardPage extends pageLocator{
     public static void getTransaction(){
         getDetailTransaction.click();
     }
-    public static void onDetailTransaction(){
-        addressText.isDisplayed();
-    }
     public String address(){
         return addressText.getText();
     }

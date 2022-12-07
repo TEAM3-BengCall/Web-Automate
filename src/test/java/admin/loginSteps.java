@@ -1,4 +1,4 @@
-package admin.steps;
+package admin;
 
 import admin.page.dashboardPage;
 import admin.page.loginPage;
@@ -14,7 +14,7 @@ public class loginSteps{
         this.webDriver = driverSetup.webDriver;
     }
 
-    @Given("User already on login page")
+    @Given("User already on login user.page")
     public void userAlreadyOnLoginPage(){
         loginPage ad = new loginPage(webDriver);
         String currentUrl = webDriver.getCurrentUrl();
@@ -39,7 +39,6 @@ public class loginSteps{
         Thread.sleep(5000);
         dashboardPage dashboardPage = new dashboardPage(webDriver);
         loginPage loginPage = new loginPage(webDriver);
-        assertEquals(message, loginPage.successLogin());
         String currentUrl = webDriver.getCurrentUrl();
         assertEquals(dashboardPage.onDashboardPage(),currentUrl);
         assertEquals(loginPage.successLogin(),message);
