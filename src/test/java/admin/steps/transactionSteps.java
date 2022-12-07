@@ -1,6 +1,8 @@
 package admin.steps;
 
 import admin.page.dashboardPage;
+import admin.page.loginPage;
+import admin.page.transactionDetailPage;
 import driverSetup.driverSetup;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +18,8 @@ public class transactionSteps {
     public void userAlreadyOnDashboardPage() throws InterruptedException {
         Thread.sleep(3000);
         dashboardPage dashboardPage = new dashboardPage(webDriver);
-        dashboardPage.onDashboardPage();
+        String currentUrl = webDriver.getCurrentUrl();
+        assertEquals(dashboardPage.onDashboardPage(),currentUrl);
     }
 
     @When("user click on detail transaction button")
@@ -28,12 +31,14 @@ public class transactionSteps {
     @Then("user redirect to detail transaction page")
     public void userRedirectToDetailTransactionPage() throws InterruptedException {
         Thread.sleep(3000);
-        dashboardPage dashboardPage = new dashboardPage(webDriver);
-        dashboardPage.onDetailTransaction();
+        transactionDetailPage transactionDetailPage = new transactionDetailPage(webDriver);
+        String currentUrl = webDriver.getCurrentUrl();
+        assertEquals(transactionDetailPage.onTransactionPage(),currentUrl);
     }
 
     @And("user see form transaction with {string}  {string} and {string}")
-    public void userSeeFormTransactionWithAnd(String arg0, String arg1, String arg2) {
+    public void userSeeFormTransactionWithAnd(String arg0, String arg1, String arg2) throws InterruptedException {
+        Thread.sleep(3000);
         dashboardPage dashboardPage = new dashboardPage(webDriver);
         assertEquals(arg0,dashboardPage.address());
         assertEquals(arg1,dashboardPage.serviceType());

@@ -1,3 +1,4 @@
+@inian
 Feature: get detail transaction
   Background: user must login as admin
     Given User already on login page

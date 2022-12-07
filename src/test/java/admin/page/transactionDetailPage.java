@@ -23,7 +23,7 @@ public class transactionDetailPage extends pageLocator{
     public String noteTrans(){
         return noteTransaction.getText();
     }
-    public static void onTransactionPage(){
-        sumbitUpdate.isDisplayed();
+    public String onTransactionPage(){
+        return URL_TRANSACTION;
     }
 }

@@ -4,6 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class pageLocator {
+    public final String URL_LOGIN = "https://bengcall.vercel.app/";
+    public final String URL_DASHBOARD = "https://bengcall.vercel.app/dashboard";
+    public final String URL_TRANSACTION = "https://bengcall.vercel.app/detailadmin/230";
     @FindBy(xpath = "//input[@id='email']")
     public static WebElement email;
     @FindBy(xpath = "//input[@id='password']")
@@ -12,7 +15,7 @@ public class pageLocator {
     public static WebElement loginButton;
     @FindBy(xpath = "//div[@class='swal-text']")
     public static WebElement successLogin;
-    @FindBy(xpath = "//button[@class='swal-button swal-button--confirm']")
+    @FindBy(css = ".swal-button")
     public static WebElement clickOkLogin;
     @FindBy(xpath = "//div[@class='w-full h-full flex flex-col items-center my-5']/div[1]//button[@id='btn-detail']")
     public static WebElement getDetailTransaction;
@@ -22,8 +25,6 @@ public class pageLocator {
     public static WebElement serviceTypeText;
     @FindBy(xpath = "//p[.='Total Price']")
     public static WebElement totalPriceText;
-    @FindBy(xpath = "//a[@href='/dashboard']//span[@class='text-PrimaryRed']")
-    public static WebElement dashboardPage;
     @FindBy(xpath = "//input[@id='service-type']")
     public static WebElement inputServiceType;
     @FindBy(xpath = "//input[@id='add-price']")

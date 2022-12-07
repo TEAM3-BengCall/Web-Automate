@@ -20,9 +20,9 @@ public class loginPage extends pageLocator {
     public static void clickLoginButton(){
         loginButton.click();
     }
-    
-    public static void loginButtonIsDisplayed(){
-        loginButton.isDisplayed();
+
+    public String onLoginPage(){
+        return URL_LOGIN;
     }
     public String successLogin(){
         return successLogin.getText();

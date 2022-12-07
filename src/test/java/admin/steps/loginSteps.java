@@ -1,5 +1,6 @@
 package admin.steps;
 
+import admin.page.dashboardPage;
 import admin.page.loginPage;
 import driverSetup.driverSetup;
 import io.cucumber.java.en.*;
@@ -16,7 +17,8 @@ public class loginSteps{
     @Given("User already on login page")
     public void userAlreadyOnLoginPage(){
         loginPage ad = new loginPage(webDriver);
-        ad.loginButtonIsDisplayed();
+        String currentUrl = webDriver.getCurrentUrl();
+        assertEquals(ad.URL_LOGIN,currentUrl);
     }
 
     @When("User input {string} as email and {string} as password")
@@ -34,9 +36,20 @@ public class loginSteps{
 
     @And("User redirect to dashboard and show message {string}")
     public void userRedirectToDashboard(String message) throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(5000);
+        dashboardPage dashboardPage = new dashboardPage(webDriver);
         loginPage loginPage = new loginPage(webDriver);
         assertEquals(message, loginPage.successLogin());
+        String currentUrl = webDriver.getCurrentUrl();
+        assertEquals(dashboardPage.onDashboardPage(),currentUrl);
+        assertEquals(loginPage.successLogin(),message);
         loginPage.clickOkLogin();
+    }
+
+    @And("user will see pop up message {string}")
+    public void userWillSeePopUpMessage(String arg0) throws InterruptedException {
+        Thread.sleep(5000);
+        loginPage loginPage = new loginPage(webDriver);
+        assertEquals(arg0, loginPage.successLogin());
     }
 }

@@ -14,12 +14,6 @@ public class updateTransactionSteps {
         this.webDriver = driverSetup.webDriver;
     }
 
-    @Given("user already on detail transaction page")
-    public void userAlreadyonDetailTransactionPage(){
-        transactionDetailPage transactionDetailPage = new transactionDetailPage(webDriver);
-        transactionDetailPage.onTransactionPage();
-    }
-
     @When("user input {string} in service type and {int} in Add priece field")
     public void userInputInServiceTypeAndInAddPrieceField(String arg0, int arg1) {
         transactionDetailPage transactionDetailPage = new transactionDetailPage(webDriver);
@@ -47,7 +41,8 @@ public class updateTransactionSteps {
     }
 
     @When("user choose status {string}")
-    public void userChooseStatus(String arg0) {
+    public void userChooseStatus(String arg0) throws InterruptedException {
+        Thread.sleep(3000);
         dashboardPage dashboardPage = new dashboardPage(webDriver);
         dashboardPage.updateStatusTransaction(arg0);
         dashboardPage.btnChangeUpdate();

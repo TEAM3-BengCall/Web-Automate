@@ -25,8 +25,8 @@ public class dashboardPage extends pageLocator{
     public String priceText(){
         return totalPriceText.getText();
     }
-    public static void onDashboardPage(){
-        dashboardPage.isDisplayed();
+    public String onDashboardPage(){
+        return URL_DASHBOARD;
     }
     public static void updateStatusTransaction(String arg0){
         Select listUpdateTransaction = new Select(listUpdate);

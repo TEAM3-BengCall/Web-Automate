@@ -10,7 +10,6 @@ Feature: update transaction
     When user click on detail transaction button
     Then user redirect to detail transaction page
     And user see form transaction with "Address"  "Service Type" and "Total Price"
-    Then user already on detail transaction page
     When user input "Ganti Lampu" in service type and 125000 in Add priece field
     Then user click submit update transaction
     And pop up message will showed and click OK
