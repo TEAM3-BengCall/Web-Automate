@@ -1,4 +1,4 @@
-package admin;
+package admin.steps;
 
 import admin.page.dashboardPage;
 import admin.page.loginPage;
@@ -14,7 +14,7 @@ public class loginSteps{
         this.webDriver = driverSetup.webDriver;
     }
 
-    @Given("User already on login user.page")
+    @Given("User already on login page")
     public void userAlreadyOnLoginPage(){
         loginPage ad = new loginPage(webDriver);
         String currentUrl = webDriver.getCurrentUrl();
