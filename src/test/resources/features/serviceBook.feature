@@ -1,6 +1,6 @@
 @ServiceUser
 Feature: Booking Service
-  User want a booking service
+  User want to make a booking service
 
 Background:
   Given User already open the web page
