@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class homePage {
+public class serviceBookPage {
     public static WebDriver driver;
 
-    public homePage(WebDriver driver) {
+    public serviceBookPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
@@ -38,6 +38,7 @@ public class homePage {
 
     public void textLogin(){
         String xpath = "//button[@class='swal-button swal-button--confirm']";
+        driver.switchTo().alert().accept(); // test add new
         driver.findElement(By.xpath(xpath)).click();
     }
 
@@ -117,6 +118,7 @@ public class homePage {
 
     public void buttonDetail(){
         String xpath = "//button[@id='btn-detail']";
+        driver.switchTo().alert().accept(); // test add new
         driver.findElement(By.xpath(xpath)).click();
     }
 
