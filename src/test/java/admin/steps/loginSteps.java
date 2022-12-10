@@ -51,4 +51,10 @@ public class loginSteps{
         loginPage loginPage = new loginPage(webDriver);
         assertEquals(arg0, loginPage.successLogin());
     }
+
+    @And("User Click Ok")
+    public void userClickOk() {
+        loginPage loginPage = new loginPage(webDriver);
+        loginPage.clickOkLogin();
+    }
 }

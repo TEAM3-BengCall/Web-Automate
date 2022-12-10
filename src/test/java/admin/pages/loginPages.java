@@ -1,9 +1,11 @@
 package admin.pages;
 
+import admin.page.pageLocator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class loginPages extends pageLocators {
+
+public class loginPages extends pageLocator {
     public static WebDriver driver;
     public loginPages(WebDriver driver){
         PageFactory.initElements(driver, this);
@@ -28,7 +30,7 @@ public class loginPages extends pageLocators {
     public String successLogin(){
         return successLogin.getText();
     }
-    public void canClick(){clickOk.click();}
+    public void canClick(){clickOkLogin.click();}
 
 
 
