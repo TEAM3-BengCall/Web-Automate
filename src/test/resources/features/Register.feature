@@ -8,6 +8,7 @@ Feature: Register account customer
     And User click on field email for input email <email>
     And User click on field password for input password <password>
     And user click signup button for end registeration
+    Then user seeing popup success created new user
     Examples:
       | fullname    | email                   | password     |
       | "Syawal"    | "syawalludin@gmail.com" | "syawal123"  |

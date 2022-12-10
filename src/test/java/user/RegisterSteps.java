@@ -8,6 +8,7 @@ import jnr.ffi.annotations.In;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import user.page.RegisterPage;
+import user.page.UpdateProfilePage;
 
 import static driverSetup.driverSetup.webDriver;
 
@@ -54,9 +55,15 @@ public class RegisterSteps {
     public void userClickSignupButtonForEndRegisteration() throws InterruptedException {
         RegisterPage registerPage = new RegisterPage(webDriver);
         registerPage.setButtonsignup();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
     }
 
+    @Then("user seeing popup success created new user")
+    public void userSeeingPopupSuccessCreatedNewUser() {
+        UpdateProfilePage updateProfilePage = new UpdateProfilePage(webDriver);
+        updateProfilePage.alert();
+
+    }
     //Scenario 2
     @And("User click on field invalid email for input email {string}")
     public void userClickOnFieldInvalidEmailForInputEmailEmail(String email) {
@@ -90,4 +97,7 @@ public class RegisterSteps {
         registerPage.setButtonOk();
         Thread.sleep(3000);
     }
+
+
+
 }
