@@ -1,6 +1,6 @@
 package admin;
 
-import admin.pages.servicePage;
+import admin.page.servicePage;
 import driverSetup.driverSetup;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

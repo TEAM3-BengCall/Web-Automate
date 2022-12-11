@@ -78,11 +78,11 @@ Feature: Edit profile customer
     Then User seeing popup "Success Change Profile"
     And User click OK
 
-  Scenario: Delete account customer
-    Given User already on home page
-    And User click icon profile
-    And User click my profile
-    When User already on update profile
-    And click Dectivate
-    Then alert massage
+#  Scenario: Delete account customer
+#    Given User already on home page
+#    And User click icon profile
+#    And User click my profile
+#    When User already on update profile
+#    And click Dectivate
+#    Then alert massage
 

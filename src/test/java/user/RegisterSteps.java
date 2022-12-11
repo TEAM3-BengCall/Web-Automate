@@ -11,6 +11,7 @@ import user.page.RegisterPage;
 import user.page.UpdateProfilePage;
 
 import static driverSetup.driverSetup.webDriver;
+import static org.junit.Assert.assertEquals;
 
 public class RegisterSteps {
 
@@ -30,7 +31,7 @@ public class RegisterSteps {
     public void userAlreadyOnSignupPage(String text) {
         RegisterPage registerPage = new RegisterPage(webDriver);
         String textsignup = registerPage.setTextsignup();
-        Assert.assertEquals(textsignup, text);
+        assertEquals(textsignup, text);
     }
 
     @And("User click on field full name for input {string}")
@@ -85,10 +86,11 @@ public class RegisterSteps {
     }
 
     @Then("User seeing popup {string}")
-    public void userSeeingPopup(String alreadyExist) {
+    public void userSeeingPopup(String alreadyExist) throws InterruptedException {
+        Thread.sleep(3000);
         RegisterPage registerPage = new RegisterPage(webDriver);
         String textpopup = registerPage.setTextPopup();
-        Assert.assertEquals(textpopup, alreadyExist);
+        assertEquals(textpopup, alreadyExist);
     }
 
     @And("click ok for re-registration")
