@@ -1,10 +1,9 @@
-Feature: Login
+Feature: Login as admin
   Scenario: login as admin with valid email and password
     Given User already on login page
     When User input "admin@bengcall.com" as email and "adminbengcall123" as password
     Then User click login button
     And User redirect to dashboard and show message "You're logged in"
-    And User Click Ok
 
   Scenario: login as admin with empty email and valid password
     Given User already on login page

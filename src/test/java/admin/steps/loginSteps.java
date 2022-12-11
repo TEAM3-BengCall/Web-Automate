@@ -36,13 +36,13 @@ public class loginSteps{
 
     @And("User redirect to dashboard and show message {string}")
     public void userRedirectToDashboard(String message) throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(7000);
         dashboardPage dashboardPage = new dashboardPage(webDriver);
         loginPage loginPage = new loginPage(webDriver);
         String currentUrl = webDriver.getCurrentUrl();
-        assertEquals(dashboardPage.onDashboardPage(),currentUrl);
         assertEquals(loginPage.successLogin(),message);
         loginPage.clickOkLogin();
+        assertEquals(dashboardPage.onDashboardPage(),currentUrl);
     }
 
     @And("user will see pop up message {string}")
@@ -50,5 +50,13 @@ public class loginSteps{
         Thread.sleep(5000);
         loginPage loginPage = new loginPage(webDriver);
         assertEquals(arg0, loginPage.successLogin());
+    }
+    @And("User redirect to dashboard and showing message {string}")
+    public void userRedirectToDashboardAndShowingMessage(String arg0) throws InterruptedException {
+        Thread.sleep(7000);
+        loginPage loginPage = new loginPage(webDriver);
+        webDriver.switchTo().alert().dismiss();
+        assertEquals(loginPage.successLogin(),arg0);
+        loginPage.clickOkLogin();
     }
 }

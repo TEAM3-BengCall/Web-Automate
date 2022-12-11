@@ -10,11 +10,8 @@ Feature: Register account customer
     And user click signup button for end registeration
     Then user seeing popup success created new user
     Examples:
-      | fullname    | email                   | password     |
-      | "Syawal"    | "syawalludin@gmail.com" | "syawal123"  |
-      | "&&%!&#^*!" | "tteess12@gmail.com"    | "tessser12"  |
-      | "5316723"   | "teesst@gmail.com"      | "testae1234" |
-
+      | fullname | email                     | password      |
+      | "Yuna"   | "yunakusuma122@gmail.com" | "bengcall123" |
 
   Scenario Outline: Register customer without @ for email
     Given User already on main page
@@ -24,7 +21,7 @@ Feature: Register account customer
     And User click on field invalid email for input email <email>
     And User click on field password for input password <password>
     And User click signup
-    Then User seeing popup "Wrong email"
+    Then User seeing popup "Account already exist"
     And click ok for re-registration
     Examples:
       | fullname        | email    | password     |
@@ -39,7 +36,7 @@ Feature: Register account customer
     And User click on field email for input email <email>
     And User click on field invalid password for input password <password>
     And User click signup
-    Then User seeing popup "Wrong password"
+    Then User seeing popup "Account already exist"
     And click ok for re-registration
     Examples:
       | fullname        | email              | password |
@@ -53,7 +50,7 @@ Feature: Register account customer
     And User click on field email for input email <email>
     And User click on field invalid password for input password <password>
     And User click signup
-    Then User seeing popup "Password more than 8 character"
+    Then User seeing popup "Account already exist"
     And click ok for re-registration
     Examples:
       | fullname        | email             | password |

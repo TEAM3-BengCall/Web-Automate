@@ -63,7 +63,6 @@ public class UpdateProfilePage {
     }
 
     public String SetLogged(){
-        driver.switchTo().alert().accept();
         return logged.getText();
     }
 
@@ -85,7 +84,8 @@ public class UpdateProfilePage {
 
     private JFileChooser fc = new JFileChooser();
     public void setClickChoosing(){
-        clickChoosing.sendKeys("C:/Users/syawa/Web-Automate/src/Minionman.jpg");
+        String DIR = System.getProperty("user.dir");
+        clickChoosing.sendKeys(DIR+"/src/test/resources/photo/Minionman.jpg");
     }
     public void updateProfileDisplayed(){
         clickChoosing.isDisplayed();
