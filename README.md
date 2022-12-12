@@ -10,7 +10,7 @@
 <p align="justify">Bengcall is an innovative software that is very useful when someone needs a mechanic to fix their motorbike quickly and not wait too long. To ensure that Bengcall works properly and meets the requirements, we as Quality Engineers carry out a kind of test to make sure everything is fine. This repository is focused on testing the WEB and in this test, we separate the tests into manual and automated tests. We also do role-based testing in bengcall; Customer and Admin.</p>
 
 ## 📓 Testing Documentation
-[Test Case API](https://docs.google.com/spreadsheets/d/1DmJoXWOrAcX_4EKlXAVM7Yp81SXUsRADw8BFUl-P498/edit#gid=2081910383)
+[Test Case WEB](https://docs.google.com/spreadsheets/d/1DmJoXWOrAcX_4EKlXAVM7Yp81SXUsRADw8BFUl-P498/edit#gid=2081910383)
 
 ## 📝 Reports
 
